@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>Oauth2</title>
+</head>
+
+<body>
+
+
+    <h3>IMPORTANT: Some website providers aren't allow localhost or 127.0.0.1 .<br/> Please emake sure that you try this with
+        a domain registered to your provider's application.<br/> You may need to change the .Listen(":8080") to: app.Listen("mydomain.com")</h3>
+
+    {{ range $key,$value:=.Providers }}
+    <p>
+
+        <a href="{{ providerURL $value }}">Log in with {{ $value }}</a>
+    </p>
+    {{ end }}
+
+</body>
+
+</html>
